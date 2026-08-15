@@ -7,10 +7,10 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://openlab.example.com"),
-  title: { default: "OPEN LAB — 매일 하나를 직접 검증합니다", template: "%s — OPEN LAB" },
-  description: "새로운 오픈소스 기술을 직접 설치하고 실패하고 측정하는 공개 기술 연구소.",
-  openGraph: { title: "OPEN LAB — 매일 하나를 직접 검증합니다", description: "광고 없는 결과와 재현 가능한 코드로 실무의 판단을 돕습니다.", images: ["/og.png"] },
-  twitter: { card: "summary_large_image", images: ["/og.png"] },
+  title: { default: "OPEN LAB — 오픈소스로 시스템을 만들고, 과정을 공개합니다", template: "%s — OPEN LAB" },
+  description: "오픈소스로 실제 시스템을 설계하고 구축하며, 프로젝트의 결정과 시행착오, 운영 경험을 공개합니다.",
+  openGraph: { title: "OPEN LAB — 오픈소스로 시스템을 만듭니다", description: "아키텍처부터 구축과 운영까지, 실제 프로젝트의 진행 과정을 공개합니다.", images: ["/og-projects.png"] },
+  twitter: { card: "summary_large_image", images: ["/og-projects.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
