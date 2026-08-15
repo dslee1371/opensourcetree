@@ -16,6 +16,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "local-rag-workbench",
+    code: "P-05",
+    title: "노트북 한 대에서 시작하는 로컬 RAG 시스템",
+    summary: "PDF와 Markdown 문서를 외부 전송 없이 수집·검색·질의하는 재현 가능한 로컬 RAG 환경을 구축합니다.",
+    category: "AI · LOCAL RAG",
+    status: "설계",
+    progress: 14,
+    updatedAt: "2026.08.15",
+    duration: "1주차",
+    stack: ["Open WebUI", "Ollama", "Docling", "Qdrant", "Langfuse"],
+    metrics: [{ label: "목표 문서", value: "100개" }, { label: "목표 응답", value: "<3s" }, { label: "외부 전송", value: "0건" }],
+    currentWork: "Docker Compose 기반 최소 아키텍처와 평가 기준 확정",
+    nextMilestone: "PDF 100개 수집부터 출처 포함 답변까지 end-to-end 연결",
+  },
+  {
     slug: "private-ai-knowledge",
     code: "P-01",
     title: "사내 문서 기반 Private AI 검색 시스템",

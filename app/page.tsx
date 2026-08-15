@@ -12,33 +12,33 @@ export default function Home() {
 
     <section className="hero shell project-hero">
       <div className="hero-copy">
-        <div className="eyebrow"><span className="pulse" /> 4개 시스템을 공개 구축 중</div>
+        <div className="eyebrow"><span className="pulse" /> 5개 시스템을 공개 구축 중</div>
         <h1>오픈소스로 시스템을 만들고,<br /><em>그 과정을 공개합니다.</em></h1>
         <p>요구사항 분석부터 아키텍처, 구축과 운영까지.<br />실제 프로젝트의 결정과 시행착오를 계속 기록합니다.</p>
         <div className="hero-actions"><Link className="button primary" href={`/lab/${featured.slug}`}>진행 중인 프로젝트 <span>→</span></Link><Link className="button quiet" href="/archive">전체 프로젝트 보기</Link></div>
       </div>
-      <div className="system-card" aria-label="Private AI 검색 시스템 아키텍처">
-        <div className="system-top"><span>PROJECT P-01</span><b>BUILDING · 72%</b></div>
-        <div className="system-title"><small>PRIVATE AI KNOWLEDGE SYSTEM</small><strong>문서에서 답변까지,<br />데이터는 내부에.</strong></div>
+      <div className="system-card" aria-label="로컬 RAG 시스템 아키텍처">
+        <div className="system-top"><span>PROJECT {featured.code}</span><b>DESIGNING · {featured.progress}%</b></div>
+        <div className="system-title"><small>LOCAL RAG WORKBENCH</small><strong>내 컴퓨터 안에서,<br />문서를 지식으로.</strong></div>
         <div className="system-map">
-          <div className="system-node"><span>01</span><b>Open WebUI</b><small>INTERFACE</small></div><i>→</i>
-          <div className="system-node"><span>02</span><b>Ollama</b><small>INFERENCE</small></div><i>→</i>
-          <div className="system-node"><span>03</span><b>Qdrant</b><small>RETRIEVAL</small></div>
+          <div className="system-node"><span>01</span><b>Docling</b><small>PARSE</small></div><i>→</i>
+          <div className="system-node"><span>02</span><b>Qdrant</b><small>RETRIEVE</small></div><i>→</i>
+          <div className="system-node"><span>03</span><b>Ollama</b><small>GENERATE</small></div>
         </div>
         <div className="system-progress"><span style={{ width: `${featured.progress}%` }} /></div>
-        <div className="system-foot"><span>NOW · {featured.currentWork}</span><b>업데이트 2일 전</b></div>
+        <div className="system-foot"><span>NOW · {featured.currentWork}</span><b>오늘 시작</b></div>
       </div>
     </section>
 
     <section className="proof-strip"><div className="shell proof-grid project-proof">
-      <div><strong>4</strong><span>진행·운영 프로젝트</span></div><div><strong>18</strong><span>통합한 오픈소스</span></div><div><strong>42</strong><span>기술 결정 기록</span></div><div><strong>3</strong><span>운영 중인 시스템</span></div>
+      <div><strong>5</strong><span>진행·운영 프로젝트</span></div><div><strong>23</strong><span>통합한 오픈소스</span></div><div><strong>45</strong><span>기술 결정 기록</span></div><div><strong>3</strong><span>운영 중인 시스템</span></div>
       <p>도구를 소개하는 데서 멈추지 않습니다.<br /><b>연결하고 운영한 경험을 남깁니다.</b></p>
     </div></section>
 
     <section className="today shell section">
-      <div className="section-heading"><div><span className="kicker">ACTIVE PROJECT · P-01</span><h2>지금 만들고 있는 시스템</h2></div><span className="fresh"><span className="pulse" /> {featured.status} · {featured.progress}%</span></div>
+      <div className="section-heading"><div><span className="kicker">NEW PROJECT · {featured.code}</span><h2>새로 시작한 시스템</h2></div><span className="fresh"><span className="pulse" /> {featured.status} · {featured.progress}%</span></div>
       <article className="featured-card project-feature">
-        <div className="feature-visual architecture-visual"><div className="arch-ring"><span>DATA</span><b>AI</b><span>OPS</span></div><small>4 OPEN SOURCE COMPONENTS<br />1 PRIVATE SYSTEM</small></div>
+        <div className="feature-visual architecture-visual"><div className="arch-ring"><span>DOCS</span><b>RAG</b><span>LOCAL</span></div><small>5 OPEN SOURCE COMPONENTS<br />1 LOCAL SYSTEM</small></div>
         <div className="feature-content">
           <div className="tag-row"><span>{featured.category}</span><span>{featured.duration}</span><span>LAST UPDATE {featured.updatedAt}</span></div>
           <h3>{featured.title}</h3><p>{featured.summary}</p>
@@ -52,7 +52,7 @@ export default function Home() {
     <section className="latest section" id="updates"><div className="shell">
       <div className="section-heading"><div><span className="kicker">BUILD LOG</span><h2>프로젝트 진행 기록</h2></div><Link className="text-link" href="/archive">모든 프로젝트 <span>→</span></Link></div>
       <div className="update-list">
-        <Link href={`/lab/${featured.slug}`}><time>08.15</time><span className="update-kind">ARCHITECTURE</span><div><h3>문서 권한을 검색 결과까지 전달하는 구조로 변경</h3><p>사용자 권한에 따라 Qdrant payload filter를 생성하는 게이트웨이를 추가했습니다.</p></div><b>→</b></Link>
+        <Link href={`/lab/${featured.slug}`}><time>08.15</time><span className="update-kind">START</span><div><h3>로컬 RAG 프로젝트의 목표와 성공 기준 확정</h3><p>외부 전송 없이 PDF 100개를 처리하고, 3초 안에 출처가 포함된 답변을 생성합니다.</p></div><b>→</b></Link>
         <Link href="/lab/internal-developer-platform"><time>08.14</time><span className="update-kind">BUILD</span><div><h3>서비스 템플릿에서 첫 Kubernetes 배포 성공</h3><p>Backstage에서 저장소 생성부터 Argo CD 동기화까지 하나의 흐름으로 연결했습니다.</p></div><b>→</b></Link>
         <Link href="/lab/supply-chain-security"><time>08.11</time><span className="update-kind">OPERATE</span><div><h3>취약점 예외 정책에 30일 만료 규칙 적용</h3><p>임시 예외가 영구 정책으로 남지 않도록 자동 알림과 차단 조건을 추가했습니다.</p></div><b>→</b></Link>
       </div>
