@@ -1,18 +1,19 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 export default function Home() {
   const featured = projects[0];
+  const openSourceCount = new Set(projects.flatMap((project) => project.stack)).size;
+  const decisionCount = projects.reduce((total, project) => total + project.decisions.length, 0);
+  const buildLogCount = projects.reduce((total, project) => total + project.updates.length, 0);
   return <main>
-    <header className="site-header shell">
-      <Link className="brand" href="/" aria-label="오픈랩 홈"><span className="brand-mark">OL</span><span>OPEN LAB</span></Link>
-      <nav aria-label="주요 메뉴"><Link href="/archive">프로젝트</Link><a href="#updates">진행 기록</a><a href="#process">구축 방식</a><Link href="/about">회사 소개</Link></nav>
-      <Link className="header-cta" href="/contact">프로젝트 문의 <span>↗</span></Link>
-    </header>
+    <SiteHeader />
 
     <section className="hero shell project-hero">
       <div className="hero-copy">
-        <div className="eyebrow"><span className="pulse" /> 5개 시스템을 공개 구축 중</div>
+        <div className="eyebrow"><span className="pulse" /> {projects.length}개 시스템의 구축 경험 공개</div>
         <h1>오픈소스로 시스템을 만들고,<br /><em>그 과정을 공개합니다.</em></h1>
         <p>요구사항 분석부터 아키텍처, 구축과 운영까지.<br />실제 프로젝트의 결정과 시행착오를 계속 기록합니다.</p>
         <div className="hero-actions"><Link className="button primary" href={`/lab/${featured.slug}`}>진행 중인 프로젝트 <span>→</span></Link><Link className="button quiet" href="/archive">전체 프로젝트 보기</Link></div>
@@ -26,12 +27,12 @@ export default function Home() {
           <div className="system-node"><span>03</span><b>Ollama</b><small>GENERATE</small></div>
         </div>
         <div className="system-progress"><span style={{ width: `${featured.progress}%` }} /></div>
-        <div className="system-foot"><span>NOW · {featured.currentWork}</span><b>오늘 시작</b></div>
+        <div className="system-foot"><span>NOW · {featured.currentWork}</span><b>{featured.updatedAt} 업데이트</b></div>
       </div>
     </section>
 
     <section className="proof-strip"><div className="shell proof-grid project-proof">
-      <div><strong>5</strong><span>진행·운영 프로젝트</span></div><div><strong>23</strong><span>통합한 오픈소스</span></div><div><strong>45</strong><span>기술 결정 기록</span></div><div><strong>3</strong><span>운영 중인 시스템</span></div>
+      <div><strong>{projects.length}</strong><span>공개 프로젝트</span></div><div><strong>{openSourceCount}</strong><span>사용한 오픈소스</span></div><div><strong>{decisionCount}</strong><span>기술 결정 기록</span></div><div><strong>{buildLogCount}</strong><span>프로젝트 업데이트</span></div>
       <p>도구를 소개하는 데서 멈추지 않습니다.<br /><b>연결하고 운영한 경험을 남깁니다.</b></p>
     </div></section>
 
@@ -64,6 +65,6 @@ export default function Home() {
     </section>
 
     <section className="newsletter shell"><div><span className="kicker light">START A PROJECT</span><h2>오픈소스로 만들 시스템을<br />함께 검토해 보세요.</h2></div><div className="inquiry-brief"><p>문제와 현재 환경을 알려주시면<br />적합한 구성과 시작 범위를 검토합니다.</p><Link className="button inquiry-button" href="/contact">프로젝트 문의하기 →</Link><a href="mailto:dslee1371@gmail.com">dslee1371@gmail.com</a></div></section>
-    <footer><div className="shell footer-inner"><div><div className="brand inverse"><span className="brand-mark">OL</span><span>OPEN LAB</span></div><p>오픈소스로 시스템을 만들고,<br />구축과 운영 경험을 공개합니다.</p></div><div className="footer-links"><Link href="/archive">프로젝트</Link><a href="#updates">진행 기록</a><a href="#process">구축 방식</a><Link href="/about">회사 소개</Link><Link href="/contact">프로젝트 문의</Link></div><small>© 2026 OPEN LAB. Built in Seoul.</small></div></footer>
+    <SiteFooter />
   </main>;
 }

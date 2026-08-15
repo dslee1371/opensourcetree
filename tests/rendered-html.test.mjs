@@ -48,3 +48,28 @@ test("project archive includes interactive search and status filters", async () 
   assert.match(explorer, /visibleProjects\.map/);
   assert.match(explorer, /전체 프로젝트 보기/);
 });
+
+test("renders project-specific detail content", async () => {
+  const response = await render("/lab/internal-developer-platform");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /반복되는 인프라 요청을/);
+  assert.match(html, /배포 상태의 기준은 Git/);
+  assert.doesNotMatch(html, /사내 지식을 검색한다/);
+});
+
+test("returns not found for an unknown project", async () => {
+  const response = await render("/lab/not-a-project");
+  assert.equal(response.status, 404);
+});
+
+test("uses the deployed domain and provides an accessible mobile menu", async () => {
+  const [layout, header] = await Promise.all([
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/SiteHeader.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.match(layout, /https:\/\/open-lab-daily\.dslee\.chatgpt\.site/);
+  assert.match(header, /aria-expanded/);
+  assert.match(header, /aria-controls="primary-navigation"/);
+  assert.match(header, /className=\{open \? "open" : ""\}/);
+});
