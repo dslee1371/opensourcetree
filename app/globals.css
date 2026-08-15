@@ -61,3 +61,42 @@ footer{background:#101d17;color:#bac5be}.footer-inner{min-height:190px;display:f
 .architecture-flow { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:28px 0; }.architecture-flow>div { background:white; border:1px solid var(--line); padding:18px; }.architecture-flow span,.architecture-flow small { display:block; color:#839088; font:8px var(--font-geist-mono),monospace; }.architecture-flow b { display:block; margin:13px 0 6px; font-size:14px; }.decision-list>div { border-top:1px solid var(--line); padding:20px 0; }.decision-list span { font:8px var(--font-geist-mono),monospace; color:var(--green); }.decision-list b { display:block; margin:9px 0; font-size:14px; }.decision-list p { font-size:12px; margin:0; }.project-timeline { border-left:1px solid #abb8b0; padding-left:22px; }.project-timeline>div { position:relative; padding:0 0 28px; }.project-timeline>div:before { content:""; position:absolute; left:-26px; top:4px; width:7px; height:7px; border-radius:50%; background:var(--green); }.project-timeline time { font:8px var(--font-geist-mono),monospace; color:var(--green); }.project-timeline b { display:block; font-size:13px; margin:7px 0; }.project-timeline p { font-size:11px; margin:0; }
 @media (max-width:900px){.project-hero{grid-template-columns:1fr}.update-list>a{grid-template-columns:65px 105px 1fr}.update-list>a>b{display:none}}
 @media (max-width:560px){.project-hero h1{font-size:43px}.system-card{padding:21px;box-shadow:10px 14px 0 #dfe4da}.system-map{gap:4px}.system-node{padding:10px 7px}.system-node b{font-size:9px}.project-proof{grid-template-columns:1fr 1fr}.project-stack,.architecture-flow{grid-template-columns:1fr}.update-list>a{grid-template-columns:55px 1fr;gap:10px}.update-kind{grid-column:2}.update-list>a>div{grid-column:1/-1;padding-left:65px}.project-row .archive-symbol{font-size:8px}.project-status-panel>div:first-child{padding:0}}
+
+/* Project discovery, company and inquiry */
+.no-results { text-align:center; padding:70px 24px; border-top:1px solid var(--line); background:#eef0ea; }
+.no-results b { display:block; font-size:18px; }
+.no-results p { color:#748078; font-size:12px; }
+.no-results button { margin-top:12px; border:0; border-bottom:1px solid var(--ink); background:transparent; padding:7px 0; font-size:11px; font-weight:750; cursor:pointer; }
+.company-section { padding:20px 0 110px; }
+.company-capabilities { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; margin-top:45px; background:var(--line); border:1px solid var(--line); }
+.company-capabilities article { background:white; padding:38px; }
+.company-capabilities span { color:var(--green); font:9px var(--font-geist-mono),monospace; }
+.company-capabilities h3 { margin:35px 0 12px; font-size:21px; }
+.company-capabilities p { color:#6d7871; font-size:12px; line-height:1.8; margin:0; }
+.company-facts { background:var(--ink); color:white; }
+.company-facts>.shell { min-height:210px; display:grid; grid-template-columns:repeat(3,1fr) 1.5fr; align-items:center; gap:34px; }
+.company-facts strong { color:var(--lime); display:block; font:750 35px var(--font-geist-mono),monospace; }
+.company-facts span { color:#aabbb1; font-size:10px; }
+.company-facts p { color:#b7c4bc; line-height:1.7; }
+.company-facts p b { color:white; }
+.about-cta .direct-email { display:block; width:max-content; margin:16px auto 0; color:var(--green); font:10px var(--font-geist-mono),monospace; border-bottom:1px solid var(--green); padding-bottom:4px; }
+.contact-page { min-height:720px; padding:100px 0 120px; display:grid; grid-template-columns:.8fr 1.2fr; gap:100px; align-items:start; }
+.contact-copy h1 { font-size:clamp(45px,5vw,65px); line-height:1.08; letter-spacing:-.06em; margin:26px 0 25px; }
+.contact-copy>p { color:#657169; line-height:1.8; font-size:14px; }
+.contact-direct { border-top:1px solid var(--line); margin-top:45px; padding-top:22px; }
+.contact-direct span,.contact-direct small { display:block; color:#7b8880; font-size:9px; }
+.contact-direct a { display:block; color:var(--green); font:700 14px var(--font-geist-mono),monospace; margin:9px 0; }
+.contact-form { background:white; border:1px solid var(--line); padding:42px; display:flex; flex-direction:column; gap:20px; box-shadow:18px 20px 0 #e2e5dd; }
+.contact-form .form-row { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
+.contact-form label { display:flex; flex-direction:column; gap:8px; font-size:10px; font-weight:700; }
+.contact-form input,.contact-form select,.contact-form textarea { width:100%; border:1px solid #ccd2cb; background:#f8f8f4; color:var(--ink); padding:13px 14px; outline:none; resize:vertical; font-size:13px; }
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus { border-color:var(--green); box-shadow:0 0 0 2px rgba(11,93,59,.1); }
+.contact-form .button { width:max-content; border:0; cursor:pointer; }
+.contact-form>small { color:#849088; font-size:9px; line-height:1.6; }
+.inquiry-brief { width:420px; display:grid; grid-template-columns:1fr auto; gap:10px 18px; align-items:center; }
+.inquiry-brief p { grid-column:1/-1; color:#b7d3c2; font-size:11px; line-height:1.6; margin:0; }
+.inquiry-brief .inquiry-button { background:var(--lime); color:var(--ink); }
+.inquiry-brief>a:last-child { color:#c4dbcD; font:9px var(--font-geist-mono),monospace; border-bottom:1px solid #739b83; padding-bottom:4px; }
+
+@media (max-width:900px){.company-facts>.shell{grid-template-columns:repeat(3,1fr);padding:45px 0}.company-facts p{grid-column:1/-1}.contact-page{grid-template-columns:1fr;gap:55px}.contact-copy{max-width:650px}.inquiry-brief{width:100%}}
+@media (max-width:560px){.company-capabilities{grid-template-columns:1fr}.company-capabilities article{padding:30px 26px}.company-facts>.shell{grid-template-columns:1fr 1fr}.company-facts p{grid-column:1/-1}.contact-page{padding:70px 0 90px}.contact-form{padding:27px 22px;box-shadow:9px 11px 0 #e2e5dd}.contact-form .form-row{grid-template-columns:1fr}.inquiry-brief{grid-template-columns:1fr}.inquiry-brief p{grid-column:auto}.inquiry-brief .button{width:100%}.inquiry-brief>a:last-child{width:max-content}}

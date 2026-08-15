@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     { date: "07.15", title: "프로젝트 시작", body: "보안, 비용, 응답 품질의 성공 조건과 비기능 요구사항을 확정했습니다." },
   ];
   return <main className="subpage">
-    <header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">OL</span><span>OPEN LAB</span></Link><nav><Link href="/archive">프로젝트</Link><Link href="/about">회사 소개</Link></nav><a className="header-cta" href="mailto:lab@example.com">프로젝트 문의 ↗</a></header>
+    <header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">OL</span><span>OPEN LAB</span></Link><nav><Link href="/archive">프로젝트</Link><Link href="/about">회사 소개</Link></nav><Link className="header-cta" href="/contact">프로젝트 문의 ↗</Link></header>
     <article className="article shell">
       <Link className="back" href="/archive">← 전체 프로젝트</Link>
       <div className="article-title"><div className="tag-row"><span>{project.code}</span><span>{project.category}</span><span>{project.status}</span></div><h1>{project.title}</h1><p>{project.summary}</p><div className="byline">{project.duration} · 마지막 업데이트 {project.updatedAt} · 아키텍처와 진행 기록 공개</div></div>
@@ -48,7 +48,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <section id="architecture"><span className="chapter">02 · ARCHITECTURE</span><h2>{project.stack.length}개의 오픈소스를<br />하나의 로컬 흐름으로.</h2><div className="architecture-flow">{project.stack.map((item, index) => <div key={item}><span>0{index + 1}</span><b>{item}</b><small>{componentRoles[index] ?? "시스템 구성"}</small></div>)}</div><p>{isLocalRag ? "문서 파싱, 임베딩, 검색, 생성과 관측을 각각 독립 컨테이너로 구성합니다. 모델과 벡터 인덱스는 로컬 볼륨에 보관하고 외부 네트워크 없이도 전체 흐름이 동작하도록 설계합니다." : "각 구성 요소는 표준 API로 분리해 향후 모델과 벡터 데이터베이스를 교체할 수 있도록 했습니다. 인증과 문서 권한은 별도 게이트웨이에서 통합 처리합니다."}</p></section>
           <section id="decisions"><span className="chapter">03 · DECISIONS</span><h2>무엇을 선택했는지보다<br />왜 선택했는지 기록합니다.</h2><div className="decision-list">{decisions.map((decision) => <div key={decision.id}><span>{decision.id}</span><b>{decision.title}</b><p>{decision.body}</p></div>)}</div></section>
           <section id="updates"><span className="chapter">04 · BUILD LOG</span><h2>프로젝트 진행 기록</h2><div className="project-timeline">{updates.map((update) => <div key={`${update.date}-${update.title}`}><time>{update.date}</time><b>{update.title}</b><p>{update.body}</p></div>)}</div></section>
-          <section id="next"><span className="chapter">05 · NEXT MILESTONE</span><h2>{project.nextMilestone}</h2><p>{isLocalRag ? "먼저 최소 구성을 실제로 실행한 뒤 설치 시간, 메모리 사용량, 검색 정확도와 출처 일치율을 기록합니다. 각 마일스톤의 Docker 구성과 실패 사례도 함께 공개합니다." : "실제 사용자의 질문과 문서 권한 패턴을 관찰하면서 검색 품질, 응답 지연, 운영 비용을 함께 측정합니다. 결과와 실패 사례는 다음 프로젝트 업데이트에 그대로 공개합니다."}</p><a className="button primary" href="mailto:lab@example.com">이 프로젝트와 이야기하기 ↗</a></section>
+          <section id="next"><span className="chapter">05 · NEXT MILESTONE</span><h2>{project.nextMilestone}</h2><p>{isLocalRag ? "먼저 최소 구성을 실제로 실행한 뒤 설치 시간, 메모리 사용량, 검색 정확도와 출처 일치율을 기록합니다. 각 마일스톤의 Docker 구성과 실패 사례도 함께 공개합니다." : "실제 사용자의 질문과 문서 권한 패턴을 관찰하면서 검색 품질, 응답 지연, 운영 비용을 함께 측정합니다. 결과와 실패 사례는 다음 프로젝트 업데이트에 그대로 공개합니다."}</p><Link className="button primary" href="/contact">이 프로젝트와 이야기하기 ↗</Link></section>
         </div>
       </div>
     </article>

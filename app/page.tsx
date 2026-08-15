@@ -7,7 +7,7 @@ export default function Home() {
     <header className="site-header shell">
       <Link className="brand" href="/" aria-label="오픈랩 홈"><span className="brand-mark">OL</span><span>OPEN LAB</span></Link>
       <nav aria-label="주요 메뉴"><Link href="/archive">프로젝트</Link><a href="#updates">진행 기록</a><a href="#process">구축 방식</a><Link href="/about">회사 소개</Link></nav>
-      <a className="header-cta" href="mailto:lab@example.com">프로젝트 문의 <span>↗</span></a>
+      <Link className="header-cta" href="/contact">프로젝트 문의 <span>↗</span></Link>
     </header>
 
     <section className="hero shell project-hero">
@@ -63,7 +63,7 @@ export default function Home() {
       <div className="process-grid"><div><span>01</span><i>?</i><h3>문제와 조건 정의</h3><p>사용자, 데이터, 보안, 비용 제약을 먼저 명확하게 정의합니다.</p></div><div><span>02</span><i>⌘</i><h3>아키텍처와 선정</h3><p>대안을 비교하고 교체 가능한 구조와 기술 결정 근거를 남깁니다.</p></div><div><span>03</span><i>↯</i><h3>통합하고 검증</h3><p>오픈소스를 연결해 실제 데이터와 장애 조건에서 동작을 확인합니다.</p></div><div><span>04</span><i>∞</i><h3>운영하고 개선</h3><p>배포 이후 비용, 장애, 업그레이드 경험까지 프로젝트에 축적합니다.</p></div></div>
     </section>
 
-    <section className="newsletter shell"><div><span className="kicker light">PROJECT BRIEF</span><h2>프로젝트의 중요한 변화를<br />한 번에 확인하세요.</h2></div><form className="subscribe"><label htmlFor="email">업무용 이메일</label><div><input id="email" type="email" placeholder="you@company.com" required /><button type="submit">업데이트 받기 →</button></div><small>마일스톤과 기술 결정이 있을 때만 발송합니다.</small></form></section>
-    <footer><div className="shell footer-inner"><div><div className="brand inverse"><span className="brand-mark">OL</span><span>OPEN LAB</span></div><p>오픈소스로 시스템을 만들고,<br />구축과 운영 경험을 공개합니다.</p></div><div className="footer-links"><Link href="/archive">프로젝트</Link><a href="#updates">진행 기록</a><a href="#process">구축 방식</a><Link href="/about">회사 소개</Link></div><small>© 2026 OPEN LAB. Built in Seoul.</small></div></footer>
+    <section className="newsletter shell"><div><span className="kicker light">START A PROJECT</span><h2>오픈소스로 만들 시스템을<br />함께 검토해 보세요.</h2></div><div className="inquiry-brief"><p>문제와 현재 환경을 알려주시면<br />적합한 구성과 시작 범위를 검토합니다.</p><Link className="button inquiry-button" href="/contact">프로젝트 문의하기 →</Link><a href="mailto:dslee1371@gmail.com">dslee1371@gmail.com</a></div></section>
+    <footer><div className="shell footer-inner"><div><div className="brand inverse"><span className="brand-mark">OL</span><span>OPEN LAB</span></div><p>오픈소스로 시스템을 만들고,<br />구축과 운영 경험을 공개합니다.</p></div><div className="footer-links"><Link href="/archive">프로젝트</Link><a href="#updates">진행 기록</a><a href="#process">구축 방식</a><Link href="/about">회사 소개</Link><Link href="/contact">프로젝트 문의</Link></div><small>© 2026 OPEN LAB. Built in Seoul.</small></div></footer>
   </main>;
 }
